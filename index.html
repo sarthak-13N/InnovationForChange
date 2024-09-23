@@ -208,17 +208,18 @@
         }
 
         /* Team Section */
+/* Team Section */
 .team {
     padding: 50px 20px;
     text-align: center;
-    background-color: antiquewhite;
 }
 
 .team-member {
     display: inline-block;
-    width: 22%; /* Adjusted for better alignment */
+    width: calc(33.33% - 30px); /* Responsive width for three columns */
     margin: 15px;
-    vertical-align: top; /* Ensures items align properly */
+    vertical-align: top; /* Ensure proper vertical alignment */
+    box-sizing: border-box; /* Include padding and border in width */
 }
 
 .team-member h3 {
@@ -228,8 +229,23 @@
 
 .team-member p {
     margin: 5px 0;
-    font-size: 16px; /* Optional: adjust font size for better readability */
+    font-size: 16px;
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .team-member {
+        width: calc(50% - 30px); /* Two columns on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .team-member {
+        width: 100%; /* One column on very small screens */
+        margin: 10px 0; /* Adjust margin for small screens */
+    }
+}
+
 
 
         /* Footer */
@@ -391,69 +407,73 @@
     </section>
 
     <!-- Team Section -->
-    <section id="Team" class="team" style="background-color: antiquewhite;">
-        <h2>Our Team</h2>
+  
+       <section id="Team" class="team" style="background-color: antiquewhite;">
+    <h2>Our Team</h2>
+
+    <div class="team-member">
+        <h3>Dr. Vivek Rankhambe</h3>
+        <p>In-Charge Principal YM College</p>
+    </div>
+
+    <div class="team-member">
+        <h3>Dr. Supriya Shukla</h3>
+        <p>Head Of Department (Computer Science)</p>
+    </div>
+
+    <div class="team-member">
+        <h3>Dr. Suvarna Jagtap</h3>
+        <p>Faculty Advisor</p>
+    </div>
+
+    <div class="team-member">
+        <h3>Dr. Sharda Dagade</h3>
+        <p>IIC Head</p>
+    </div>
+
+    <div class="team-member">
+        <h3>Sarthak Nimble</h3>
+        <p>Team Leader</p>
+    </div>
+
+    <div class="team-member">
+        <h3>Tejas Barguje</h3>
+        <p>Project Head</p>
+    </div>
+
+    <div class="team-member">
+        <h3>Bhagyalxmi Bamungi</h3>
+        <p>Director of Communications</p>
+    </div>
+
+    <div class="team-member">
+        <h3>Harshada Vishwakarma</h3>
+        <p>Event Coordinator</p>
+    </div>
+
+    <div class="team-member">
+        <h3>Sarvesh Varode</h3>
+        <p>Technology Director</p>
+    </div>
+
+    <div class="team-member">
+        <h3>Manali Kadu</h3>
+        <p>Report Generation Specialist</p>
+    </div>
+
+    <div class="team-member">
+        <h3>Varshita Paritkar</h3>
+        <p>Social Media Strategist</p>
+    </div>
+
+    <div class="team-member">
+        <h3>Rushikesh Pawar</h3>
+        <p>Task Manager</p>
+    </div>
+</section>
+
     
-        <div class="team-member">
-            <h3>Dr. Vivek Rankhambe</h3>
-            <p>In-Charge Principal YM College</p>
-        </div>
-    
-        <div class="team-member">
-            <h3>Dr. Supriya Shukla</h3>
-            <p>Head Of Department (Computer Science)</p>
-        </div>
-    
-        <div class="team-member">
-            <h3>Dr. Suvarna Jagtap</h3>
-            <p>Faculty Advisor</p>
-        </div>
-    
-        <div class="team-member">
-            <h3>Dr. Sharda Dagade</h3>
-            <p>IIC Head</p>
-        </div>
-    
-        <div class="team-member">
-            <h3>Sarthak Nimble</h3>
-            <p>Team Leader</p>
-        </div>
-    
-        <div class="team-member">
-            <h3>Tejas Barguje</h3>
-            <p>Project Head</p>
-        </div>
-    
-        <div class="team-member">
-            <h3>Bhagyalxmi Bamungi</h3>
-            <p>Director of Communications</p>
-        </div>
-    
-        <div class="team-member">
-            <h3>Harshada Vishwakarma</h3>
-            <p>Event Coordinator</p>
-        </div>
-    
-        <div class="team-member">
-            <h3>Sarvesh Varode</h3>
-            <p>Technology Director</p>
-        </div>
-    
-        <div class="team-member">
-            <h3>Manali Kadu</h3>
-            <p>Report Generation Specialist</p>
-        </div>
-    
-        <div class="team-member">
-            <h3>Varshita Paritkar</h3>
-            <p>Social Media Strategist</p>
-        </div>
-    
-        <div class="team-member">
-            <h3>Rushikesh Pawar</h3>
-            <p>Task Manager</p>
-        </div>
-    </section>
+       
     
     <!-- Footer -->
     <footer>
