@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YM College E-Cell</title>
+    <style>
+        /* General Styles */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            /* Ensure no margin */
+            padding: 0;
+            /* Ensure no padding */
+
+
+        }
+
+        /* Header Styles */
+        header {
+            margin: 0;
+            /* Remove any margin from the header */
+            padding: 0;
+            /* Remove any padding from the header */
+        }
+
+        .logo img {
+            width: 100px;
+            height: auto;
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+        }
+
+        .menu-toggle .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: #333;
+        }
+
+        nav {
+            background-color: #333;
+
+            top: 0%;
+            color: #fff;
+            padding: 10px 0;
+            /* Adjust padding if needed */
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+        }
+
+        /* Hero Section */
+.hero {
+    background-image: url('https://wallpaperaccess.com/full/1968302.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #FFD700;
+    text-align: center;
+    margin: 0;
+}
+
+/* Logo Row Styles */
+.logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Adds space between logos and text */
+}
+
+.logos img {
+    width: 100px;
+    height: auto;
+    margin: 0 15px;
+}
+
+.logos img:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+/* Hero Content */
+.hero-content {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6); /* Adds a background color for better text readability */
+    border-radius: 10px;
+    margin-top: 20px; /* Adds space between logos and text */
+}
+
+        .hero h1 {
+            font-size: 48px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #f8b400;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-top: 15px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button:hover {
+            background-color: #f8a300;
+            transform: scale(1.05);
+        }
+
+        /* About Us Section */
+        .about {
+            padding: 50px 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        /* Events Section */
+        .events {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .event-card {
+            background: white;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            width: 45%;
+            vertical-align: top;
+        }
+
+        .event-card h3 {
+            font-size: 28px;
+        }
+
+        .event-card button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .event-card button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Success Stories Section */
+        .success-stories {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        /* Team Section */
+.team {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: antiquewhite;
+}
+
+.team-member {
+    display: inline-block;
+    width: 22%; /* Adjusted for better alignment */
+    margin: 15px;
+    vertical-align: top; /* Ensures items align properly */
+}
+
+.team-member h3 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.team-member p {
+    margin: 5px 0;
+    font-size: 16px; /* Optional: adjust font size for better readability */
+}
+
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        footer .social-media a {
+            color: white;
+            margin: 0 10px;
+        }
+
+        /* Popup Styles */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .common-popup-contact {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 90%;
+            margin: auto;
+        }
+
+        .popup .close {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+            float: right;
+        }
+
+        .popup .close:hover {
+            color: #f00;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="menu-toggle" id="menuToggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <nav id="sidebarNav">
+            <ul>
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#About">About Us</a></li>
+                <li><a href="#Events">Events</a></li>
+                <li><a href="#Team">Team</a></li>
+                <li><a href="#Resources">Resources</a></li>
+                <li style="cursor: pointer;"><a id="contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="Home" class="hero">
+        <!-- Logo Row -->
+        <div class="logos">
+            <img src="e-cell.png" alt="Logo 1">
+            <img src="Bharati.png" alt="Logo 2">
+            <img src="logo.png" alt="Logo 3">
+        </div>
+        
+        <!-- Hero Content -->
+        <div class="hero-content">
+            <h1>Empowering Tomorrow’s Entrepreneurs</h1>
+            <p style="color: #f5e5e5;"><b>Join us in fostering innovation and entrepreneurship at YM College.</b></p>
+            <!-- Button to Open the Popup -->
+            <button class="button1" id="openPopup">Get in Touch</button>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="About" class="about">
+        <h2>About Us</h2>
+        <p>Welcome to E-Cell YMC! Founded on August 24, 2024, by passionate students Sarthak Nimble and Tejas Sanjay Barguje, our entrepreneurial cell is dedicated to fostering innovation and entrepreneurship among the youth at Yashavantrao Mohite College.</p>
+        <p>At E-Cell YMC, we believe in the power of ideas and the spirit of collaboration. Our mission is to create a vibrant ecosystem where aspiring entrepreneurs can connect, learn, and grow. Through workshops, networking events, and mentorship programs, we aim to equip students with the skills and knowledge needed to turn their entrepreneurial dreams into reality.</p>
+        <p>Join us in our journey to inspire and empower the next generation of leaders and innovators. Together, we can make a difference!</p>
+    </section>
+    
+
+    <!-- Events Section -->
+    <section id="Events" class="events">
+        <h2>Upcoming Events</h2>
+        <div class="event-card">
+            <h3>Innovation For Change</h3>
+            <p>Details about event</p>
+            <a href="register.html">
+            <button>Register Here..</button></a>
+        </div>
+        <!-- <div class="event-card">
+            <h3>Event Two</h3>
+            <p>Details about event two.</p>
+            <button>Learn More</button>
+        </div> -->
+    </section>
+
+    <!-- Success Stories Section -->
+    <section id="Success" class="success-stories">
+        <h2>Success Stories</h2>
+        <p>Will be announce</p>
+    </section>
+
+    <!-- Team Section -->
+    <section id="Team" class="team" style="background-color: antiquewhite;">
+        <h2>Our Team</h2>
+    
+        <div class="team-member">
+            <h3>Dr. Vivek Rankhambe</h3>
+            <p>In-Charge Principal YM College</p>
+        </div>
+    
+        <div class="team-member">
+            <h3>Dr. Supriya Shukla</h3>
+            <p>Head Of Department (Computer Science)</p>
+        </div>
+    
+        <div class="team-member">
+            <h3>Dr. Suvarna Jagtap</h3>
+            <p>Faculty Advisor</p>
+        </div>
+    
+        <div class="team-member">
+            <h3>Dr. Sharda Dagade</h3>
+            <p>IIC Head</p>
+        </div>
+    
+        <div class="team-member">
+            <h3>Sarthak Nimble</h3>
+            <p>Team Leader</p>
+        </div>
+    
+        <div class="team-member">
+            <h3>Tejas Barguje</h3>
+            <p>Project Head</p>
+        </div>
+    
+        <div class="team-member">
+            <h3>Bhagyalxmi Bamungi</h3>
+            <p>Director of Communications</p>
+        </div>
+    
+        <div class="team-member">
+            <h3>Harshada Vishwakarma</h3>
+            <p>Event Coordinator</p>
+        </div>
+    
+        <div class="team-member">
+            <h3>Sarvesh Varode</h3>
+            <p>Technology Director</p>
+        </div>
+    
+        <div class="team-member">
+            <h3>Manali Kadu</h3>
+            <p>Report Generation Specialist</p>
+        </div>
+    
+        <div class="team-member">
+            <h3>Varshita Paritkar</h3>
+            <p>Social Media Strategist</p>
+        </div>
+    
+        <div class="team-member">
+            <h3>Rushikesh Pawar</h3>
+            <p>Task Manager</p>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="social-media">
+            <a href="https://github.com/ecellymc" target="_blank">GitHub</a> |
+            <a href="https://www.linkedin.com/in/sarthak-nimble1642" target="_blank">LinkedIn</a> |
+            <a href="https://wa.me/yourphonenumber" target="_blank">WhatsApp</a>
+        </div>
+        <p>&copy; 2024 YM College E-Cell. All rights reserved.</p>
+    </footer>
+
+    <!-- Popup for Contact Form -->
+    <div id="popup" class="popup">
+        <div class="common-popup-contact">
+            <span class="close">&times;</span>
+            <h2>Contact Us</h2>
+            <form onsubmit="return validateForm()">
+                <div class="form-group">
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" name="fullName">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender">
+                        <option value="">Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="profession">Profession:</label>
+                    <select id="profession" name="profession" onchange="toggleFields()">
+                        <option value="">Select Profession</option>
+                        <option value="student">Student</option>
+                        <option value="employed">Employed</option>
+                    </select>
+                </div>
+                <div id="collegeNameGroup" class="form-group hidden">
+                    <label for="collegeName">College Name:</label>
+                    <input type="text" id="collegeName" name="collegeName">
+                </div>
+                <div id="companyNameGroup" class="form-group hidden">
+                    <label for="companyName">Company Name:</label>
+                    <input type="text" id="companyName" name="companyName">
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Function to toggle the sidebar menu
+        document.getElementById('menuToggle').addEventListener('click', function () {
+            var sidebarNav = document.getElementById('sidebarNav');
+            sidebarNav.classList.toggle('show');
+        });
+
+        // Function to open the popup
+        document.getElementById('openPopup').addEventListener('click', function () {
+            document.getElementById('popup').style.display = 'flex';
+        });
+
+        document.getElementById('contact').addEventListener('click', function () {
+            document.getElementById('popup').style.display = 'flex';
+        });
+
+        // Function to close the popup
+        document.querySelector('.popup .close').addEventListener('click', function () {
+            document.getElementById('popup').style.display = 'none';
+        });
+
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebarNav = document.getElementById('sidebarNav').querySelector('ul');
+
+        menuToggle.addEventListener('click', () => {
+            sidebarNav.classList.toggle('show');
+        });
+        // Function to toggle additional fields based on profession
+        function toggleFields() {
+            var profession = document.getElementById('profession').value;
+            var collegeNameGroup = document.getElementById('collegeNameGroup');
+            var companyNameGroup = document.getElementById('companyNameGroup');
+
+            if (profession === 'student') {
+                collegeNameGroup.classList.remove('hidden');
+                companyNameGroup.classList.add('hidden');
+            } else if (profession === 'employed') {
+                companyNameGroup.classList.remove('hidden');
+                collegeNameGroup.classList.add('hidden');
+            } else {
+                collegeNameGroup.classList.add('hidden');
+                companyNameGroup.classList.add('hidden');
+            }
+        }
+
+        // Function to validate the form
+        function validateForm() {
+            var startupName = document.getElementById('startupName').value;
+            var fullName = document.getElementById('fullName').value;
+            var email = document.getElementById('email').value;
+            var gender = document.getElementById('gender').value;
+            var country = document.getElementById('country').value;
+            var profession = document.getElementById('profession').value;
+            var collegeName = document.getElementById('collegeName').value;
+            var companyName = document.getElementById('companyName').value;
+
+            if (!startupName) {
+                alert('Startup Name is required');
+                return false;
+            }
+            if (!fullName) {
+                alert('Full Name is required');
+                return false;
+            }
+            if (!email) {
+                alert('Email is required');
+                return false;
+            }
+            if (!gender) {
+                alert('Gender selection is required');
+                return false;
+            }
+            if (!country) {
+                alert('Country selection is required');
+                return false;
+            }
+            if (profession === 'student' && !collegeName) {
+                alert('College Name is required for students');
+                return false;
+            }
+            if (profession === 'employed' && !companyName) {
+                alert('Company Name is required for employed individuals');
+                return false;
+            }
+
+            alert('Form Submitted Successfully!');
+            return true;
+        }
+    </script>
+</body>
+
+</html>
